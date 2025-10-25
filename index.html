@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CherepokClient - Чит для Minecraft Reallyworld</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>CherepokClient</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#features">Функции</a></li>
+                <li><a href="#download">Скачать</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><button class="btn-login" onclick="openAuthModal()">Войти</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">CherepokClient</h1>
+            <p class="hero-subtitle">Мощный чит-клиент для сервера Reallyworld</p>
+            <button class="btn-primary" onclick="openAuthModal()">Начать использовать</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Функции клиента</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>KillAura</h3>
+                    <p>Автоматическая атака ближайших врагов с настройкой радиуса и фильтров</p>
+                </div>
+                <div class="feature-card">
+                    <h3>AutoTotem</h3>
+                    <p>Автоматическая установка тотема бессмертия при получении смертельного урона</p>
+                </div>
+                <div class="feature-card">
+                    <h3>ItemESP</h3>
+                    <p>Подсветка предметов через стены с настройкой цветов и расстояния</p>
+                </div>
+                <div class="feature-card">
+                    <h3>HUD</h3>
+                    <p>Кастомный интерфейс с информацией о FPS, координатах и состоянии</p>
+                </div>
+                <div class="feature-card">
+                    <h3>ClickPerl</h3>
+                    <p>Автоматический жемчуг эндера с оптимизацией траектории</p>
+                </div>
+                <div class="feature-card">
+                    <h3>TestCrystal</h3>
+                    <p>Тестирование кристаллов энда с расчетом урона</p>
+                </div>
+                <div class="feature-card">
+                    <h3>ClickFriend</h3>
+                    <p>Система друзей с защитой от атак своих</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Скачать CherepokClient</h2>
+            <div class="download-content">
+                <p>Для скачивания клиента необходимо авторизоваться и принять условия использования</p>
+                <button class="btn-download" onclick="openAuthModal()">Скачать лоудер</button>
+                <div class="system-requirements">
+                    <h4>Системные требования:</h4>
+                    <ul>
+                        <li>Minecraft 1.16.5</li>
+                        <li>Windows 10/11 </li>
+                        <li>4GB+ оперативной памяти</li>
+                        <li>Java 8+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">О CherepokClient</h2>
+            <div class="about-content">
+                <p>CherepokClient - это премиум чит-клиент для сервера Reallyworld, разработанный с учетом всех современных методов обхода античитов.</p>
+                <div class="social-links">
+                    <button class="btn-social discord" onclick="joinDiscord()">Discord</button>
+                    <button class="btn-social telegram" onclick="joinTelegram()">Telegram</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 CherepokClient. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="#" onclick="openTermsModal()">Условия использования</a>
+                    <a href="#" onclick="openPrivacyModal()">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAuthModal()">&times;</span>
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="openTab('login')">Вход</button>
+                <button class="tab-btn" onclick="openTab('register')">Регистрация</button>
+            </div>
+            
+            <div id="login" class="tab-content active">
+                <form id="loginForm" class="auth-form">
+                    <input type="text" placeholder="Логин" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <button type="submit" class="btn-primary">Войти</button>
+                </form>
+            </div>
+            
+            <div id="register" class="tab-content">
+                <form id="registerForm" class="auth-form">
+                    <input type="text" placeholder="Логин" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Пароль" required>
+                    <input type="password" placeholder="Подтвердите пароль" required>
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        Я принимаю <a href="#" onclick="openTermsModal()">Условия использования</a>
+                    </label>
+                    <button type="submit" class="btn-primary">Зарегистрироваться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content terms-content">
+            <span class="close" onclick="closeTermsModal()">&times;</span>
+            <h2>Условия использования</h2>
+            <div class="terms-text">
+                <h3>1. Общие положения</h3>
+                <p>1.1. Используя CherepokClient, вы соглашаетесь с настоящими условиями.</p>
+                
+                <h3>2. Правила использования</h3>
+                <p>2.1. Запрещено распространение клиента без разрешения разработчиков.</p>
+                <p>2.2. Разработчики не несут ответственности за блокировки аккаунтов.</p>
+                
+                <h3>3. Лицензия</h3>
+                <p>3.1. Клиент предоставляется "как есть" без гарантий.</p>
+                
+                <h3>4. Конфиденциальность</h3>
+                <p>4.1. Мы не собираем личную информацию пользователей.</p>
+                
+                <button class="btn-primary" onclick="acceptTerms()">Принять условия</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
